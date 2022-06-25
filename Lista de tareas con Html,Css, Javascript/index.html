@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>    
+    
+<body>   
+    <div class="contenedor">
+        <div class="cuerpo">
+           <div class="titulo"><span>Lista de tareas</span></div>
+            <div class="calendario">
+               <div id="diamesanio">
+                    <div id="dia"><span></span></div>
+                    <div>
+                        <div id="mes"><span></span></div>
+                        <div id="anio"><span></span></div>   
+                    </div>                    
+               </div>
+               <div id="semanahora">
+                   <div id="diamostrar"><span></span></div>
+                    <div id="hora"><span></span></div>
+               </div>                
+            </div>
+            <div class="accion">
+                <div><input id=input autocomplete="off" type="text" placeholder="Nueva tarea"></div>
+                <div><button id="mas">+</button></div>
+                <div><button id="btnordenar">Ordenar</button></div>
+            </div>
+            <div class="tareas">
+                <ul id="lista" class="lista">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script src="javascript.js"></script>
+
+</html>
+
+
