@@ -1,14 +1,17 @@
 let date=new Date();
-    let dia=date.getDate();
-    let diasemana=date.getDay();
-    let mes=date.getMonth()+1;
-    let anio=date.getFullYear();
-    let diamostar=document.getElementById("dia");
-    let mesmostrar=document.getElementById("mes");
-    let aniomostrar=document.getElementById("anio");
-    let diamostrar=document.getElementById("diamostrar");
-    let horamostrar=document.getElementById("hora");
-    
+let dia=date.getDate();
+let diasemana=date.getDay();
+let mes=date.getMonth()+1;
+let anio=date.getFullYear();
+let diamostar=document.getElementById("dia");
+let mesmostrar=document.getElementById("mes");
+let aniomostrar=document.getElementById("anio");
+let diamostrar=document.getElementById("diamostrar");
+let horamostrar=document.getElementById("hora");
+let input=document.getElementById("input");
+let btnMas=document.getElementById("mas");
+let btnOrdenar=document.getElementById("btnordenar");
+let ul=document.getElementById("lista");
     
     let hora=date.getHours();
     let minutos=date.getMinutes();
@@ -88,44 +91,42 @@ let date=new Date();
     mesmostrar.textContent=`${mestexto}`
     aniomostrar.textContent=`${anio}`
     diamostrar.textContent=`${diatexto}`
-    /*function actualizarHora(){
-        horamostrar.textContent=date.toLocaleTimeString();               
-    }
     
-    window.onload=function(){
-        setInterval(actualizarHora,1000);
-    }*/
+    
+    
+    /*===  MOSTRAR HORA  ===*/
     
     function muestraReloj() {
         var fechaHora = new Date();
         var horas = fechaHora.getHours();
-        var minutos = fechaHora.getMinutes();
+        var minutos =fechaHora.getMinutes();
         var segundos = fechaHora.getSeconds();
 
-        if(horas < 10) { horas = '0' + horas; }
+        if(hora < 10) { hora = '0' + hora; }
         if(minutos < 10) { minutos = '0' + minutos; }
         if(segundos < 10) { segundos = '0' + segundos; }
 
-        document.getElementById("hora").innerHTML = horas+':'+minutos+':'+segundos;
+        document.getElementById("hora").innerHTML = hora+':'+minutos+':'+segundos;
 }
 
-window.onload = function() {
-  setInterval(muestraReloj, 1000);
-}
+    window.onload = function() {
+        setInterval(muestraReloj, 1000);
+    }
+    
+    
     
 /*=== DOM  ===*/
 
-let input=document.getElementById("input");
-let btnMas=document.getElementById("mas");
-let btnOrdenar=document.getElementById("btnordenar");
-let ul=document.getElementById("lista");
 
-btnMas.addEventListener("click",()=>{    
-    let li=document.createElement(`li`);        
+btnMas.addEventListener("click",()=>{        
+    let li=document.createElement(`li`);
+    if(input.value){
         li.textContent=input.value;    
         li.addEventListener("click",elegirItem);
         ul.appendChild(li);          
         input.value="";
+    }
+        
 });
 
 const elegirItem=(event)=>{
