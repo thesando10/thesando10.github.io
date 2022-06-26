@@ -6,7 +6,7 @@ let anio=date.getFullYear();
 let diamostar=document.getElementById("dia");
 let mesmostrar=document.getElementById("mes");
 let aniomostrar=document.getElementById("anio");
-let diamostrar=document.getElementById("diamostrar");
+let semanamostrar=document.getElementById("diamostrar");
 let horamostrar=document.getElementById("hora");
 let input=document.getElementById("input");
 let btnMas=document.getElementById("mas");
@@ -82,7 +82,7 @@ let ul=document.getElementById("lista");
         case 6:
             diatexto="Sabado";
         break;
-        case 7:
+        case 0:
            diatexto="Domingo";
         break;        
            }
@@ -90,7 +90,7 @@ let ul=document.getElementById("lista");
     diamostar.textContent=`${dia}`
     mesmostrar.textContent=`${mestexto}`
     aniomostrar.textContent=`${anio}`
-    diamostrar.textContent=`${diatexto}`
+    semanamostrar.textContent=`${diatexto}`
     
     
     
@@ -102,11 +102,11 @@ let ul=document.getElementById("lista");
         var minutos =fechaHora.getMinutes();
         var segundos = fechaHora.getSeconds();
 
-        if(hora < 10) { hora = '0' + hora; }
+        if(horas < 10) { horas = '0' + horas; }
         if(minutos < 10) { minutos = '0' + minutos; }
         if(segundos < 10) { segundos = '0' + segundos; }
 
-        document.getElementById("hora").innerHTML = hora+':'+minutos+':'+segundos;
+        document.getElementById("hora").innerHTML = horas+':'+minutos+':'+segundos;
 }
 
     window.onload = function() {
